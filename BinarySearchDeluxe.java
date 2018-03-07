@@ -12,6 +12,7 @@ public class BinarySearchDeluxe {
 	     else if (a[mid] > key) high = mid - 1;
 	     else if (a[mid] < key) low = mid + 1;
 	   } //end while
+	 return -1; //returns -1 if no such key
  } //end firstIndexOf
   
  /* Returns the index of the last key in a[] that equals the search key, or -1 if no such key. */
@@ -26,5 +27,6 @@ public class BinarySearchDeluxe {
 	     else if (a[mid] > key) high = mid - 1;
 	     else if (a[mid] < key) low = mid + 1;
 	   } //end while
+	 return -1; //returns -1 if no such key
  } //end lastIndexOf
 }
