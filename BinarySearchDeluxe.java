@@ -2,7 +2,7 @@ public class BinarySearchDeluxe {
   
  /* Returns the index of the first key in a[] that equals the search key, or -1 if no such key. */
  public static <Key> int firstIndexOf(Key[] a, Key key, Comparator<Key> comparator){
-	 int low = comparator.low, high = comparator.high, mid;
+	 int low = 0, high = a.length - 1, mid;
 	 if(a == null || key == null || comparator == null) {
 		 throw new java.lang.NullPointerException;
 		 break; }
