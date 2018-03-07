@@ -25,7 +25,34 @@ public class Term implements Comparable<Term> {
 	}
 	/* Compares the two terms in lexicographic order by query. */
 	public int compareTo(Term that){
-		
+		int size1 = this.word.length();
+		int size2 = that.word.length();
+		int size = 0;
+		int temp = 0;
+		if(size1 > size2) {
+			size = size2;
+		}
+		else {
+			size = size1;
+		}
+		for(int i = 0; i < size; i++) {
+			if(this.word.indexOf(i)<that.word.indexOf(i)) {
+				temp = -1;
+				break;
+			}
+			else if(this.word.indexOf(i)>that.word.indexOf(i)) {
+				temp = 1;
+				break;
+			}
+			else {
+				temp = 0;
+				break;
+			}
+		}
+		if(size1 != size2 && this.word.indexOf(size) == that.word.indexOf(size)) {
+			temp = -1;
+		}
+		return temp;
 	}
 	// Returns a string representation of this term in the following format:
 	// weight (i.e., ??.toString()), followed by a tab, followed by query.
