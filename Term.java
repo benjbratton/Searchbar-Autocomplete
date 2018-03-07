@@ -45,8 +45,7 @@ public class Term implements Comparable<Term> {
 				break;
 			}
 			else {
-				temp = 0;
-				break;
+				continue;
 			}
 		}
 		if(size1 != size2 && this.word.indexOf(size) == that.word.indexOf(size)) {
