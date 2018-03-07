@@ -13,7 +13,7 @@ public class Term implements Comparable<Term> {
  /* Compares the two terms in lexicographic order but using only the first
 r characters of each query. */
  public static Comparator<Term> byPrefixOrder(int r){
-  throw new java.lang.IllegalArgumentException();
+  if (r < 0) throw new java.lang.IllegalArgumentException();
  }
  /* Compares the two terms in lexicographic order by query. */
  public int compareTo(Term that){
