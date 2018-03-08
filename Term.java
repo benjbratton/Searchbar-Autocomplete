@@ -9,7 +9,8 @@ public class Term implements Comparable<Term> {
 		  throw new java.lang.IllegalArgumentException();
 		word = query;
 		worth = weight;
-		Key[] arrayOfCities = In.readStrings(cities.txt);
+		Key[] arrayOfCityNames = In.readStrings(cities.txt);
+		Key[] arrayOfCityWeights = In
 		Key[] arrayOfWiktionary = In.readStrings(wiktionary.txt);
 	  
 	}
