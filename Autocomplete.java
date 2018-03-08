@@ -38,7 +38,7 @@ public class Autocomplete {// implement sorting algorithm in this class
 			 else if(j>hi) {
 				 a[k] = aux[i];
 				 i++;}
-			 else if(comparator.compare(a[i], a[j])){
+			 else if(comparator.compare(a[i], a[j])==1){
 				 a[k]=aux[j];
 				 j++;}
 			 else {
