@@ -16,7 +16,7 @@ public class Term implements Comparable<Term> {
 		return new ReverseOrder();
 	}
 	public static class ReverseOrder implements Comparator<Term>{
-		public int compare(Term v, Term w) {
+		public long compare(Term v, Term w) {
 			return v.worth - w.worth;
 		}
 	}
