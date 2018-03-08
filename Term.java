@@ -1,6 +1,6 @@
 public class Term implements Comparable<Term> {
-	private final String word;
-	private final long worth;
+	public String word;
+	public long worth;
 	/* Initializes a term with the given query string and weight. */
 	public Term(String query, long weight){
 		if(query.equals(null))
@@ -9,61 +9,40 @@ public class Term implements Comparable<Term> {
 		  throw new java.lang.IllegalArgumentException();
 		word = query;
 		worth = weight;
-		//Parallel arrays for city library
-		In.In("cities.txt");
-		Key[] arrayOfCityNames = In.readStrings("cities.txt");
-		Key[] arrayOfCityWeights = In.readLong()
-		//Parallel arrays for wiktionary library
-		In.In("wiktionary.txt");
-		Key[] arrayOfWiktionaryWords = In.readStrings("wiktionary.txt");
-		Key[] arrayOfWiktionaryWeights = In.readLong();
 	  
 	}
 	/* Compares the two terms in descending order by weight. */
 	public static Comparator<Term> byReverseWeightOrder(){
-		
+		return new ReverseOrder();
+	}
+	public static class ReverseOrder implements Comparator<Term>{
+		public int compare(Term v, Term w) {
+			return v.worth - w.worth;
+		}
 	}
 	/* Compares the two terms in lexicographic order but using only the first
 	r characters of each query. */
 	public static Comparator<Term> byPrefixOrder(int r){
 		if(r < 0)
 			throw new java.lang.IllegalArgumentException();
-		
-		
+		return new PrefixOrder(r);	
+	}
+	public static class PrefixOrder implements Comparator<Term> {
+		int r;
+		PrefixOrder(int r){
+			this.r = r;
+		}
+		public int compare(Term v, Term w) {
+			return v.compareTo(w);
+		}
 	}
 	/* Compares the two terms in lexicographic order by query. */
 	public int compareTo(Term that){
-		int size1 = this.word.length();
-		int size2 = that.word.length();
-		int size = 0;
-		int temp = 0;
-		if(size1 > size2) {
-			size = size2;
-		}
-		else {
-			size = size1;
-		}
-		for(int i = 0; i < size; i++) {
-			if(this.word.indexOf(i)<that.word.indexOf(i)) {
-				temp = -1;
-				break;
-			}
-			else if(this.word.indexOf(i)>that.word.indexOf(i)) {
-				temp = 1;
-				break;
-			}
-			else {
-				continue;
-			}
-		}
-		if(size1 != size2 && this.word.indexOf(size) == that.word.indexOf(size)) {
-			temp = -1;
-		}
-		return temp;
+		return this.word.compareTo(that.word);
 	}
 	// Returns a string representation of this term in the following format:
 	// weight (i.e., ??.toString()), followed by a tab, followed by query.
 	public String toString(){
-		return Long.toString(worth) + "	" + word;
+		return Long.toString(this.worth) + "\t" + this.word;
 	}
 }
