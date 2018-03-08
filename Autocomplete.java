@@ -4,6 +4,8 @@ public class Autocomplete {// implement sorting algorithm in this class
  public Autocomplete(Term[] terms)
  /* Returns all terms that start with the given prefix, in descending
 order of weight. */
- public Term[] allMatches(String prefix)
-
+ public Term[] allMatches(String prefix){
+  int first, last;
+first = BinarySearchDeluxe.firstIndexOf(terms, prefix, Comparator<prefix>);
+last = BinarySearchDeluxe.lirstIndexOf(terms, prefix, Comparator<prefix>)
 }
