@@ -35,9 +35,9 @@ public class Term implements Comparable<Term> {
 		return new PrefixOrder(r);//returns a new class that compares two terms	
 	}
 	public static class PrefixOrder implements Comparator<Term> {
-		int r;//int r from byPreficOrder
+		int r;//int r from byPrefixOrder
 		PrefixOrder(int r){//constructor of PrefixOrder
-			this.r = r;
+			this.r = r;//saves the current value for prefix as the prefix from byPrefixOrder
 		}
 		public int compare(Term v, Term w) {//compares the two terms based on the prefix of length r
 			return v.compareTo(w);//returns the comparison
@@ -53,4 +53,3 @@ public class Term implements Comparable<Term> {
 		return Long.toString(this.worth) + "\t" + this.word;
 	}
 }
-
