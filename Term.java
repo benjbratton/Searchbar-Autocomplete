@@ -53,3 +53,4 @@ public class Term implements Comparable<Term> {
 		return Long.toString(this.worth) + "\t" + this.word;
 	}
 }
+
