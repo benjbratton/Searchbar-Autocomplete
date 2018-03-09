@@ -4,7 +4,7 @@ public class BinarySearchDeluxe {
  /* Returns the index of the first key in a[] that equals the search key, or -1 if no such key. */
  public static <Key> int firstIndexOf(Key[] a, Key key, Comparator<Key> comparator){
 	 //Throw exception if any of the parameters are null
-	 if (a == null || key == null || comparator == null) throw new java.lang.NullPointerException;
+	 if (a == null || key == null || comparator == null) throw new java.lang.NullPointerException();
 	 
 	 int low = 0, high = a.length - 1, mid;
 	 
@@ -21,7 +21,7 @@ public class BinarySearchDeluxe {
  /* Returns the index of the last key in a[] that equals the search key, or -1 if no such key. */
  public static <Key> int lastIndexOf(Key[] a, Key key, Comparator<Key> comparator){
 	 //Throw exception if any of the parameters are null
-	 if (a == null || key == null || comparator == null) throw new java.lang.NullPointerException;
+	 if (a == null || key == null || comparator == null) throw new java.lang.NullPointerException();
 	 
 	 int low = 0, high = a.length - 1, mid;
 	 
