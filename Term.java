@@ -1,3 +1,13 @@
+// Course:  CPS 350
+// Semester: 2018 Spring
+// Name: Benjamin Bratton and Nick Cagle
+// Section: 01
+// Assignment: 03
+// Purpose: This program is designed to guess what the user is trying to type in a search engine.
+//			Based on a database of past searches it will suggest the top 10 (or less) likely
+//			recomendations for the user to select.
+// Date completed: March 9, 2018
+
 import java.util.Comparator;
 
 public class Term implements Comparable<Term> {
@@ -53,4 +63,3 @@ public class Term implements Comparable<Term> {
 		return Long.toString(this.worth) + "\t" + this.word;
 	}
 }
-
